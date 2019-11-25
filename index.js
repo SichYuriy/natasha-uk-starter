@@ -1,0 +1,1 @@
+module.exports = require('./natasha-uk-starter');
