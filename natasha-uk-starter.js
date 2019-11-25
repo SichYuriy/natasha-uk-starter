@@ -4,6 +4,7 @@ const EXTRACT_NAMES_URL = '/extract-names-uk';
 const EXTRACT_PERSONS_URL = '/extract-persons-uk';
 const EXTRACT_DATES_URL = '/extract-dates-uk';
 const EXTRACT_LOCATIONS_URL = '/extract-locations-uk';
+const EXTRACT_ALL_ENTITIES_URL = '/extract-all-uk';
 
 class NatashaUkStarter {
     constructor(natashaUkUrl) {
@@ -27,6 +28,11 @@ class NatashaUkStarter {
 
     extractLocations(articles) {
         return axios.post(this.natashaUkUrl + EXTRACT_LOCATIONS_URL, articles)
+            .then(response => response.data);
+    }
+
+    extractAllEntities(articles) {
+        return axios.post(this.natashaUkUrl + EXTRACT_ALL_ENTITIES_URL, articles)
             .then(response => response.data);
     }
 }
